@@ -1,35 +1,35 @@
 'use strict';
 
 let lang = prompt("Укажите язык: ru/en");
+const   eng = ['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+        rus = ['Понедельник', 'вторник', 'среда', 'четверг', 'пятница','суббота', 'воскресенье'];
 
 if (lang == 'ru') {
-    console.log("Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье");
+    console.log(rus);
 } else if (lang == 'en') {
-    console.log("Monday, tuesday, wednesday, thursday, friday, saturday, sunday");
+    console.log(eng);
 } else {
     console.log("Упс, что-то пошло не по плану(");
 }
 
 switch (lang) {
     case 'ru':
-        console.log("Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье");
+        console.log(rus);
         break;
     case 'en':
-        console.log("Monday, tuesday, wednesday, thursday, friday, saturday, sunday");
+        console.log(eng);
         break;
     default:
         console.log("Упс, что-то пошло не по плану(");
 }
 
-
 let arr = {
-    'ru':['Понедельник', 'вторник', 'среда', 'четверг', 'пятница','суббота', 'воскресенье'],
-    'en':['Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+    'ru': rus,
+    'en': eng,
 };
 console.log(arr[lang]);
 
 let namePerson = prompt("Укажите свое имя: ");
-
 
 // Сделал ненужную переменную result, потому что без нее валидатор ругается 
 let result = (namePerson == 'Артем') ? console.log("Директор") :
