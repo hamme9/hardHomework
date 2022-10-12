@@ -1,19 +1,15 @@
 'use strict';
 
-let argumentOne = "  Привет";
-let argumentTwo = 12;
-let argumentThree = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
-
-const myFunc = function(arg) {
-    if (typeof arg !== 'string') {
-        return "В качестве аргумента передана не строка!";
-    } else if (typeof arg === "string" && arg.length <= 30) {
-        return arg.trim();
-    } else if (arg.length > 30) {
-        return arg.slice(0, 30) + '...';
-    }
+const isNumber = function (num) {
+    return !isNaN(parseFloat(num)) && isFinite(num) && String(num).trim() != '0';
 };
 
-console.log(myFunc(argumentOne));
-console.log(myFunc(argumentTwo));
-console.log(myFunc(argumentThree));
+let a;
+let b;
+
+while (!isNumber(a)) {
+    a = prompt("Введите что-то");
+    a = String(a).trim();
+    a = +a;
+    console.log("a =", a);
+}
