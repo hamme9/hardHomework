@@ -10,13 +10,15 @@ for (let i = 0; i < arr.length; i++) {
 
 let n = 100;
 
-nextPrime:
-for (let i = 2; i <= n; i++) { //перебираем числа i
-  for (let j = 2; j < i; j++) { //перебираем делители числа i
-    if (i % j == 0) { //проверяем есть ли делитель у i среди делителей j
-        continue nextPrime; //если есть делитель, то начинаем цикл заново
+for (let i = 2; i <= n; i++) {
+    let isPrime = true;
+    for (let j = 2; j < i; j++) { // проверка, делится ли число без остатка на j
+        if (i % j === 0) { 
+            isPrime = false; 
+            break; // если нет, то проверяем следующее
+        } 
     }
-  }
-
-  console.log('Делитель числа', i, '= 1 и', i);
+    if (isPrime) {
+        console.log(i);
+    }
 }
