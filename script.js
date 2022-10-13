@@ -1,7 +1,7 @@
 'use strict';
 
 const isNumber = function (num) {
-    return !isNaN(parseFloat(num)) && isFinite(num) && num[0] != ' ' && String(num).slice(-1) != ' ' && num >= 0;
+    return !isNaN(parseFloat(num)) && isFinite(num) && num[0] != ' ' && num.slice(-1) != ' ' && num >= 0;
 };
 
 let a;
