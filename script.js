@@ -5,7 +5,6 @@ const isNumber = function (num) {
 };
 
 let a;
-let b;
 
 while (!isNumber(a)) {
     a = prompt("Введите что-то");
