@@ -9,6 +9,5 @@ let b;
 
 while (!isNumber(a)) {
     a = prompt("Введите что-то");
-    a = String(a);
     console.log("a =", a);
 }
