@@ -1,19 +1,18 @@
 'use strict';
 
-let argumentOne = "  Привет";
-let argumentTwo = 12;
-let argumentThree = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
+const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const todayDay = new Date();
+console.log(todayDay.getDay());
 
-const myFunc = function(arg) {
-    if (typeof arg !== 'string') {
-        return "В качестве аргумента передана не строка!";
-    } else if (typeof arg === "string" && arg.length <= 30) {
-        return arg.trim();
-    } else if (arg.length > 30) {
-        return arg.slice(0, 30) + '...';
+// for (let key in week) {
+//     console.log(week[key]);
+// }
+
+week.forEach(function(item, i){
+    console.log(item + ' ' + i);
+    
+    if (i == todayDay.getDay() - 1){
+        // week[i].style.fontWeight = 'bold';
+        document.body.insertAdjacentHTML("beforeend", "<div><i>" + week[i] + "<i></div>");
     }
-};
-
-console.log(myFunc(argumentOne));
-console.log(myFunc(argumentTwo));
-console.log(myFunc(argumentThree));
+});
