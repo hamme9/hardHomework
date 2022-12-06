@@ -2,17 +2,15 @@
 
 const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const todayDay = new Date();
-console.log(todayDay.getDay());
-
-// for (let key in week) {
-//     console.log(week[key]);
-// }
 
 week.forEach(function(item, i){
     console.log(item + ' ' + i);
     
     if (i == todayDay.getDay() - 1){
-        // week[i].style.fontWeight = 'bold';
-        document.body.insertAdjacentHTML("beforeend", "<div><i>" + week[i] + "<i></div>");
+        document.body.insertAdjacentHTML("beforeend", "<div><b>" + week[i] + "<b></div>");
+    } else if (item == 'Saturday' || item == 'Sunday') {
+        document.body.insertAdjacentHTML("beforeend", "<div><i>" + week[i] + "</i></div>");
+    } else {
+        document.body.insertAdjacentHTML("beforeend", "<div>" + week[i] + "</div>");
     }
 });
